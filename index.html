@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DZF | DEEZEDFUNDED COMMAND</title>
+<style>
+:root {
+  --bg:#080b09; --panel:#111713; --green:#263b2d;
+  --gold:#d8b66a; --white:#e8e9e3; --muted:#9ba69b;
+  --line:#39483b;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--bg); color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+}
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 6%; border-bottom:1px solid var(--line);
+  background:#090d0a;
+}
+.logo {font-weight:900;font-size:30px;letter-spacing:4px;color:var(--gold)}
+.logo small {display:block;font-size:10px;letter-spacing:5px;margin-top:5px}
+nav {display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+a {color:var(--white);text-decoration:none;font-size:13px}
+button {
+  cursor:pointer; border:1px solid var(--gold); background:var(--gold);
+  color:#11140f; padding:12px 18px; font-weight:bold; letter-spacing:1px;
+}
+button:hover {filter:brightness(1.14);transform:translateY(-1px)}
+.hero {
+  min-height:480px; display:flex;align-items:center;padding:70px 8%;
+  background:
+    linear-gradient(90deg,rgba(5,9,6,.97),rgba(5,9,6,.75),rgba(5,9,6,.3)),
+    radial-gradient(ellipse at 78% 45%,#526346 0%,#1b2a20 24%,#090d0a 66%);
+  border-bottom:1px solid var(--line);
+}
+.hero-content {max-width:720px}
+.eyebrow {color:var(--gold);letter-spacing:4px;font-size:12px}
+h1 {font-size:clamp(38px,7vw,76px);line-height:1.02;margin:20px 0}
+h1 span {color:var(--gold)}
+.hero p {color:#c1c8bd;line-height:1.8;max-width:570px}
+.actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.secondary {background:transparent;color:var(--gold)}
+section {padding:55px 6%}
+.section-head {display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:25px}
+h2 {font-size:25px;margin:0 0 8px}
+.sub {color:var(--muted);font-size:13px}
+.grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.card {
+  background:linear-gradient(145deg,#172019,#0d120e);
+  border:1px solid var(--line);padding:22px 18px;position:relative;
+  min-height:210px;transition:.2s;
+}
+.card:hover {border-color:var(--gold);transform:translateY(-3px)}
+.emblem {font-size:34px;margin-bottom:18px;color:var(--gold)}
+.card h3 {margin:0 0 10px;font-size:17px;letter-spacing:1px}
+.card p {color:var(--muted);font-size:13px;line-height:1.6;min-height:40px}
+.tag {display:inline-block;color:var(--gold);font-size:10px;letter-spacing:2px;margin-bottom:12px}
+.stages {display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stage {border:1px solid var(--line);padding:22px 12px;text-align:center;background:#0e140f}
+.stage strong {display:block;color:var(--gold);font-size:15px;letter-spacing:1px}
+.stage span {display:block;color:var(--muted);font-size:12px;margin-top:8px}
+.rank-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.rank {text-align:center;padding:18px 8px;border:1px solid var(--line);background:#101610}
+.rank .insignia {font-size:25px;color:var(--gold);margin-bottom:10px}
+.rank b {display:block;font-size:12px}
+.rank small {display:block;color:var(--muted);margin-top:6px}
+footer {border-top:1px solid var(--line);padding:28px 6%;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#notice {position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1b281e;border:1px solid var(--gold);padding:12px 18px;display:none;z-index:5}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rank-grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{align-items:flex-start;gap:20px;flex-direction:column}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.stages{grid-template-columns:repeat(2,1fr)}.hero{padding:55px 6%}nav{gap:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">DZF<small>DEEZEDFUNDED</small></div>
+  <nav>
+    <a href="#programs">PROGRAMS</a>
+    <a href="#stages">OPERATIONS</a>
+    <a href="#ranks">RANK & HONOR</a>
+    <button class="sound-toggle" onclick="toggleSound()">SOUND: ON</button>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">TRADING COMMAND • EST. DZF</div>
+      <h1>DISCIPLINE IS<br>YOUR <span>WEAPON.</span></h1>
+      <p>Choose your mission. Prove your discipline. Advance through the ranks. Your trading journey starts here.</p>
+      <div class="actions">
+        <button onclick="goTo('programs')">SELECT YOUR MISSION ↗</button>
+        <button class="secondary" onclick="goTo('ranks')">VIEW RANK SYSTEM</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="programs">
+    <div class="section-head">
+      <div><div class="eyebrow">MISSION SELECT</div><h2>CHOOSE YOUR PROGRAM</h2><div class="sub">Four programs. Different paths. One objective.</div></div>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="emblem">⬟</div><div class="tag">ONE-STEP CHALLENGE</div><h3>DOMINION</h3><p>One evaluation stage before qualification, subject to program rules.</p><button onclick="selectProgram('DOMINION')">SELECT MISSION</button></article>
+      <article class="card"><div class="emblem">✥</div><div class="tag">TWO-STEP CHALLENGE</div><h3>SPECIAL OPS</h3><p>Two evaluation stages designed to test consistency and discipline.</p><button onclick="selectProgram('SPECIAL OPS')">SELECT MISSION</button></article>
+      <article class="card"><div class="emblem">✦</div><div class="tag">INSTANT FUNDED</div><h3>HIGH COMMAND</h3><p>Direct-funded account with applicable program rules.</p><button onclick="selectProgram('HIGH COMMAND')">SELECT MISSION</button></article>
+      <article class="card"><div class="emblem">⛨</div><div class="tag">THREE-STEP CHALLENGE</div><h3>SUPREME</h3><p>Three evaluation stages for traders pursuing a longer challenge path.</p><button onclick="selectProgram('SUPREME')">SELECT MISSION</button></article>
+    </div>
+  </section>
+
+  <section id="stages">
+    <div class="section-head"><div><div class="eyebrow">OPERATION PROGRESS</div><h2>YOUR JOURNEY</h2><div class="sub">Progress stages — not account types or military ranks.</div></div></div>
+    <div class="stages">
+      <div class="stage"><strong>01 / RECON</strong><span>Study the field</span></div>
+      <div class="stage"><strong>02 / SENTINEL</strong><span>Build discipline</span></div>
+      <div class="stage"><strong>03 / STRIKE</strong><span>Execute the plan</span></div>
+      <div class="stage"><strong>04 / VANGUARD</strong><span>Reach the objective</span></div>
+    </div>
+  </section>
+
+  <section id="accounts">
+    <div class="section-head"><div><div class="eyebrow">ACCOUNT ARMORY</div><h2>ACCOUNT SIZES</h2><div class="sub">Account values are illustrative until official rules and pricing are defined.</div></div></div>
+    <div class="grid">
+      <article class="card"><div class="emblem">◉</div><h3>$1,000</h3><p>Micro account tier</p><button onclick="chooseAccount('1K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">⬢</div><h3>$5,000</h3><p>Bronze concept tier</p><button onclick="chooseAccount('5K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">▲</div><h3>$10,000</h3><p>Silver concept tier</p><button onclick="chooseAccount('10K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">◆</div><h3>$15,000</h3><p>Diamond concept tier</p><button onclick="chooseAccount('15K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">⬡</div><h3>$25,000</h3><p>Gold concept tier</p><button onclick="chooseAccount('25K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">✧</div><h3>$50,000</h3><p>Platinum concept tier</p><button onclick="chooseAccount('50K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">❖</div><h3>$100,000</h3><p>Emerald concept tier</p><button onclick="chooseAccount('100K')">CHOOSE SIZE</button></article>
+      <article class="card"><div class="emblem">✺</div><h3>$200,000</h3><p>Sovereign concept tier</p><button onclick="chooseAccount('200K')">CHOOSE SIZE</button></article>
+    </div>
+  </section>
+
+  <section id="ranks">
+    <div class="section-head"><div><div class="eyebrow">RANK & HONOR</div><h2>THE TEN RANKS</h2><div class="sub">A preview of the progression system. Final insignia will use approved artwork.</div></div></div>
+    <div class="rank-grid">
+      <div class="rank"><div class="insignia">⌃</div><b>CADET</b><small>طالب عسكري</small></div>
+      <div class="rank"><div class="insignia">⌃⌃</div><b>CORPORAL</b><small>عريف</small></div>
+      <div class="rank"><div class="insignia">⌃⌃⌃</div><b>SERGEANT</b><small>رقيب</small></div>
+      <div class="rank"><div class="insignia">★</div><b>LIEUTENANT</b><small>ملازم</small></div>
+      <div class="rank"><div class="insignia">★★★</div><b>CAPTAIN</b><small>نقيب</small></div>
+      <div class="rank"><div class="insignia">✦</div><b>MAJOR</b><small>رائد</small></div>
+      <div class="rank"><div class="insignia">✥</div><b>LT. COLONEL</b><small>مقدم</small></div>
+      <div class="rank"><div class="insignia">❖</div><b>MAJOR GENERAL</b><small>لواء</small></div>
+      <div class="rank"><div class="insignia">♜</div><b>GENERAL</b><small>جنرال</small></div>
+      <div class="rank"><div class="insignia">♛</div><b>MARSHAL</b><small>مارشال</small></div>
+    </div>
+  </section>
+</main>
+<footer><span>© DZF — DEEZEDFUNDED</span><span>TRADE • GROW • ACHIEVE</span><span>DEMO INTERFACE — NOT A LIVE BROKER</span></footer>
+<div id="notice"></div>
+
+<script>
+let soundEnabled = true;
+let audioContext;
+function playTacticalSound() {
+  if (!soundEnabled) return;
+  try {
+    audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)();
+    if (audioContext.state === "suspended") audioContext.resume();
+    const now = audioContext.currentTime;
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(360, now);
+    osc.frequency.exponentialRampToValueAtTime(115, now + 0.09);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.16, now + 0.008);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+    osc.connect(gain); gain.connect(audioContext.destination);
+    osc.start(now); osc.stop(now + 0.13);
+  } catch (e) {}
+}
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  document.querySelector(".sound-toggle").textContent = "SOUND: " + (soundEnabled ? "ON" : "OFF");
+  showNotice(soundEnabled ? "Tactical sound enabled" : "Tactical sound muted");
+}
+function showNotice(message) {
+  const n = document.getElementById("notice");
+  n.textContent = message; n.style.display = "block";
+  clearTimeout(window.noticeTimer);
+  window.noticeTimer = setTimeout(() => n.style.display = "none", 2400);
+}
+function goTo(id) { playTacticalSound(); document.getElementById(id).scrollIntoView({behavior:"smooth"}); }
+function selectProgram(name) { playTacticalSound(); showNotice(name + " selected — demo interface only"); }
+function chooseAccount(size) { playTacticalSound(); showNotice(size + " account size selected — demo only"); }
+document.addEventListener("click", e => {
+  if (e.target.closest("button") && !e.target.classList.contains("sound-toggle")) playTacticalSound();
+});
+</script>
+</body>
+</html>
